@@ -30,6 +30,12 @@
                 </asp:ContentPlaceHolder>
             </div>
     </div>
+        <asp:Label ID="Label1" runat="server" Text="Last Viewed Pages"></asp:Label>
+        <br />
+        <asp:ListBox ID="ListBox1" runat="server" Height="141px" Width="112px"></asp:ListBox>
+        <br />
+        <br />
+        <br />
     </form>
 </body>
 </html>

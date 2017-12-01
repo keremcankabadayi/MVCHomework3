@@ -10,7 +10,7 @@
             <asp:QueryStringParameter Name="ID" QueryStringField="ID" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="944px">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="830px">
         <Columns>
             <asp:ImageField HeaderText="CoverImage" DataImageUrlField="CoverImage" DataImageUrlFormatString="~/images/{0}.jpg" />
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />

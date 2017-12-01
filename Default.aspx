@@ -6,6 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" Runat="Server">
-    This is a home page
+    Welcome the Book and CD Adding and Viewing Site!
 </asp:Content>
 

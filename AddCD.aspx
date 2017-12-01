@@ -24,13 +24,78 @@
             <asp:Parameter Name="CDID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-&nbsp;
-    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="CDID" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="50px" Width="125px">
+    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="CDID" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="50px" Width="831px">
         <Fields>
-            <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-            <asp:BoundField DataField="Artist" HeaderText="Artist" SortExpression="Artist" />
-            <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
-            <asp:BoundField DataField="Duration" HeaderText="Duration" SortExpression="Duration" />
+            <asp:TemplateField HeaderText="Title" SortExpression="Title">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                        ErrorMessage="You can't leave empty this area"
+                        ForeColor="Red" Text="*Required"
+                        ControlToValidate="TextBox1">
+                    </asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Title") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Artist" SortExpression="Artist">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Artist") %>'></asp:TextBox>                    
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Artist") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                        ErrorMessage="You can't leave empty this area"
+                        ForeColor="Red" Text="*Required"
+                        ControlToValidate="TextBox2">
+                    </asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Artist") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Year" SortExpression="Year">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Year") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Year") %>'></asp:TextBox>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server"
+                        Operator="DataTypeCheck" Type="Integer" 
+                        ControlToValidate="TextBox3"
+                        ForeColor="Red"
+                        Text="*It must be number"
+                        ErrorMessage="CompareValidator"
+                        >
+                    </asp:CompareValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("Year") %>'></asp:Label>
+
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Duration" SortExpression="Duration">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Duration") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Duration") %>'></asp:TextBox>
+                    <asp:CompareValidator ID="CompareValidator2" runat="server"
+                        Operator="DataTypeCheck" Type="Integer" 
+                        ControlToValidate="TextBox4"
+                        ForeColor="Red"
+                        Text="*It must be number"
+                        ErrorMessage="CompareValidator">
+                    </asp:CompareValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("Duration") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:CommandField ShowInsertButton="True" ButtonType="Button" InsertText="Save" />
         </Fields>
     </asp:DetailsView>
