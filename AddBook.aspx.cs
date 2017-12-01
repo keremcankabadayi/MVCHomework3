@@ -11,4 +11,8 @@ public partial class BookInfo : System.Web.UI.Page
     {
 
     }
+    protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+    {
+
+    }
 }

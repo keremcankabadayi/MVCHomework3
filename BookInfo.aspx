@@ -12,7 +12,7 @@
     </asp:SqlDataSource>
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="944px">
         <Columns>
-            <asp:ImageField HeaderText="CoverImage" DataImageUrlField="id" DataImageUrlFormatString="~/images/{0}.jpg" />
+            <asp:ImageField HeaderText="CoverImage" DataImageUrlField="CoverImage" DataImageUrlFormatString="~/images/{0}.jpg" />
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
             <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
             <asp:BoundField DataField="Publisher" HeaderText="Publisher" SortExpression="Publisher" />

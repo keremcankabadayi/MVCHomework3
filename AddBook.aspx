@@ -13,24 +13,17 @@
         <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32" />
         </DeleteParameters>
-        <InsertParameters>                     
-            
-            <asp:Parameter Name="Title" Type="String" />
+        <InsertParameters>                               
+            <asp:Parameter Name="Title" Type="String" />            
             <asp:Parameter Name="Author" Type="String" />
             <asp:Parameter Name="Publisher" Type="String" />
             <asp:Parameter Name="PageNumber" Type="Int32" />
             <asp:Parameter Name="CoverImage" Type="String" />
         </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Title" Type="String" />
-            <asp:Parameter Name="Author" Type="String" />
-            <asp:Parameter Name="Publisher" Type="String" />
-            <asp:Parameter Name="PageNumber" Type="Int32" />
-            <asp:Parameter Name="CoverImage" Type="String" />
-            <asp:Parameter Name="ID" Type="Int32" />
-        </UpdateParameters>
+        
+        
     </asp:SqlDataSource>
-    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="16px" Width="331px">
+    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="16px" Width="331px" OnPageIndexChanging="DetailsView1_PageIndexChanging">
         <Fields>
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
             <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
